@@ -319,6 +319,7 @@ class MyHomePage extends State<MyApp> {
                         TextFormField(
                           decoration: InputDecoration(hintText: '用户名'),
                           validator: (value) {
+                            // ignore: null_aware_before_operator
                             if (value?.length <= 5) {
                               return '用户名必须大于5个字符';
                             }
@@ -333,6 +334,7 @@ class MyHomePage extends State<MyApp> {
                           decoration: InputDecoration(hintText: '密码'),
                           obscureText: true,
                           validator: (value) {
+                            // ignore: null_aware_before_operator
                             if (value?.length <= 8) {
                               return '密码必须大于8个字符';
                             }
