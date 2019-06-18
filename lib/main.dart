@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/rich_text.dart';
 import 'package:flutter_demo/text.dart';
 
+import 'dialog.dart';
+import 'snackbar.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
@@ -377,6 +380,18 @@ class MyHomePage extends State<MyApp> {
 
                   ///将使用 SnackBar 的 Widget 拆分出来
                   SnackBarWidget(),
+
+                  ///showAboutDialog
+                  AboutDialogWidget(),
+
+                  ///SimpleDialog
+                  SimpleDialogWidget(),
+
+                  ///AlertDialog
+                  AlertDialogWidget(),
+
+                  ///CupertinoAlertDialog
+                  CupertinoAlertDialogWidget(),
                 ],
               ),
             ),
@@ -387,18 +402,3 @@ class MyHomePage extends State<MyApp> {
   }
 }
 
-class SnackBarWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return RaisedButton(
-        child: Text("Show SnackBar"),
-        onPressed: () {
-          Scaffold.of(context).showSnackBar(SnackBar(
-              content: Text(
-                'SnackBar',
-                style: TextStyle(color: Colors.cyanAccent),
-              ),
-              duration: Duration(seconds: 5)));
-        });
-  }
-}
