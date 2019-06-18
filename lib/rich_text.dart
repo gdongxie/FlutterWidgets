@@ -19,7 +19,10 @@ RichText buildRichText() {
     ///text	String	要显示的文字	可选
     ///children	List< TextSpan>	子 TextSpan	可选
     ///recognizer	GestureRecognizer	一个手势识别器，它将接收到达此文本范围的事件。	可选
-    new TextSpan(text: "Hello", style: TextStyle(color: Colors.lightBlue)),
-    new TextSpan(text: "Flutter", style: TextStyle(color: Colors.green)),
+    new TextSpan(
+        text: "Hello",
+        style: TextStyle(color: Colors.lightBlue, fontSize: 18.0)),
+    new TextSpan(
+        text: "Flutter", style: TextStyle(color: Colors.green, fontSize: 18.0)),
   ]));
 }

@@ -65,7 +65,7 @@ Text buildText(String text) {
         ///TextDecoration.overline：上划线
         ///TextDecoration.lineThrough：中划线
         ///TextDecoration.none：不划线
-        decoration: TextDecoration.underline,
+        decoration: TextDecoration.lineThrough,
 
         ///	TextDecoration 线条的颜色
         decorationColor: Colors.yellowAccent,
