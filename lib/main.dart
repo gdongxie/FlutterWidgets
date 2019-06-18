@@ -158,8 +158,9 @@ class MyHomePage extends State<MyApp> {
               child: new Column(
                 children: <Widget>[
                   ///Text
-                  buildText(
-                      '''A run of text with a single style.The Text widget displays a string of text with single style. The string might break across multiple lines or might all be displayed on the same line depending on the layout constraints.The style argument is optional. When omitted, the text will use the style from the closest enclosing DefaultTextStyle. If the given style's TextStyle.inherit property is true (the default), the given style will be merged with the closest enclosing DefaultTextStyle. This merging behavior is useful, for example, to make the text bold while using the default font family and size.'''),
+                  buildText('''
+              A run of text with a single style.The Text widget displays a string of text with single style. The string might break across multiple lines or might all be displayed on the same line depending on the layout constraints.The style argument is optional. When omitted, the text will use the style from the closest enclosing DefaultTextStyle. If the given style's TextStyle.inherit property is true (the default), the given style will be merged with the closest enclosing DefaultTextStyle. This merging behavior is useful, for example, to make the text bold while using the default font family and size.
+              '''),
 
                   ///RichText
                   buildRichText(),
@@ -353,6 +354,29 @@ class MyHomePage extends State<MyApp> {
                       ],
                     ),
                   ),
+
+                  ///使用 Builder Widget创建SnackBar
+                  Container(
+                    margin: const EdgeInsets.all(10.0),
+                    alignment: Alignment.center,
+                    child: Builder(
+                      builder: (context) => RaisedButton(
+                            child: Text('Show SnackBar'),
+                            onPressed: () {
+                              Scaffold.of(context).showSnackBar(SnackBar(
+                                content: Text(
+                                  'SnackBar',
+                                  style: TextStyle(color: Colors.green),
+                                ),
+                                duration: Duration(seconds: 5),
+                              ));
+                            },
+                          ),
+                    ),
+                  ),
+
+                  ///将使用 SnackBar 的 Widget 拆分出来
+                  SnackBarWidget(),
                 ],
               ),
             ),
@@ -360,5 +384,21 @@ class MyHomePage extends State<MyApp> {
         ),
       ),
     );
+  }
+}
+
+class SnackBarWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return RaisedButton(
+        child: Text("Show SnackBar"),
+        onPressed: () {
+          Scaffold.of(context).showSnackBar(SnackBar(
+              content: Text(
+                'SnackBar',
+                style: TextStyle(color: Colors.cyanAccent),
+              ),
+              duration: Duration(seconds: 5)));
+        });
   }
 }
