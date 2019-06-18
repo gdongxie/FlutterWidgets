@@ -120,7 +120,6 @@ Scaffold的[构造方法][4]
       })
   
   
-  具体其他Wiget,请移步至WIKI
   
   [1]: https://api.flutter.dev/flutter/material/MaterialApp-class.html
   [2]: https://api.flutter.dev/flutter/material/Scaffold-class.html
