@@ -3,6 +3,7 @@ import 'package:flutter_demo/rich_text.dart';
 import 'package:flutter_demo/text.dart';
 
 import 'dialog.dart';
+import 'popupMenu_button.dart';
 import 'snackbar.dart';
 
 void main() => runApp(MyApp());
@@ -397,10 +398,18 @@ class MyHomePage extends State<MyApp> {
                 ],
               ),
             ),
+            new Container(
+              margin: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
+              alignment: Alignment.center,
+              child:
+
+                  ///PopupMenuButton
+                  PopupMenuButtonWidget(),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
